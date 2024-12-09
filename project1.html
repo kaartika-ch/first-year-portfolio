@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Geist Mono', serif;
+            color: #F3CBD4;
+            background-color: #0F52BA;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .back-home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #F3CBD4;
+            border: 2px solid #F3CBD4;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-home-button:hover {
+            background-color: #F3CBD4;
+            color: #402920;
+        }
+
+        .case-study-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .left-section {
+            width: 50%;
+            margin-top: 20px;
+            padding-right: 20px;
+            border-right: 1px solid #F3CBD4;
+        }
+
+        .image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #F3CBD4;
+    display: flex; /* This will allow us to center the image */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+.top-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container while maintaining its aspect ratio */
+    object-position: center; /* Ensures the image is centered within the container */
+}
+
+
+        /* Title Section */
+        .title-section {
+            margin-top: 20px;
+        }
+
+        .title-section h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            font-weight: 600;
+            text-align: left;
+            border-bottom: 1px solid #F3CBD4;
+        }
+
+        .description {
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-top: 5px;
+            color: #F3CBD4;
+        }
+
+        /* Right Section (Content) */
+        .right-section {
+            width: 45%;
+            margin-top: 25px;
+            padding-left: 20px;
+        }
+
+        /* Content Section */
+        .content-item {
+            border-bottom: 1px solid #F3CBD4;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .content-item h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            background-color: #F3CBD4;
+            color: #402920;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .content-item p {
+            font-size: 0.9rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            margin: 0 auto;
+        }
+
+        .lightbox .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #F3CBD4;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .lightbox .prev-btn {
+            left: 20px;
+        }
+
+        .lightbox .next-btn {
+            right: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Back Home Button -->
+    <a href="index.html" class="back-home-button">Back Home</a>
+
+    <!-- Case Study Layout -->
+    <div class="case-study-container">
+        <!-- Left Section: Image and Title -->
+        <div class="left-section">
+            <div class="image-container" id="imageContainer">
+                <img src="vinyl mockup 1.png" alt="Image above title" class="top-image" id="mainImage">
+            </div>
+            <div class="title-section">
+                <h1>ZIGGY STARDUST:<br>Vinyl Cover Design</h1>
+                <span class="description">The Ziggy Stardust album redesign aims to display a contemporary, 
+                    superhero-inspired aesthetic to showcase the persona’s iconic influence. It incorporates 
+                    the classic imagery of David Bowie’s lightning bolt and a strong red and blue colour scheme 
+                    reminiscent of his Ziggy Stardust persona.</span>
+            </div>            
+        </div>
+
+        <!-- Right Section: Content Section -->
+        <div class="right-section">
+            <div class="content-item">
+                <h2>[ 1 ] THE CHALLENGE</h2>
+                <p>Design a vinyl cover for an artist from the 1970s-1990s in a contemporary style.</p>
+            </div>
+            <div class="content-item">
+                <h2>[ 2 ] THE BASICS</h2>
+                <p>Complete vinyl sleeve and CD design using basic knowledge of softwares and graphic design.</p>
+            </div>
+            <div class="content-item">
+                <h2>[ 3 ] THE DETAILS</h2>
+                <p>Tools: Adobe Illustrator + Photoshop
+                <br> Time Spent: 2 Weeks</p>
+            </div>
+            <div class="content-item">
+                <h2>[ 4 ] THE PROCESS</h2>
+                <p>Flat 2-D Illustration created in Adobe Illustrator using basic shapes and tools. 
+                    Adding textures, shadows, and highlights to bring out a 3D-like effect in Adobe Photoshop.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="nav-btn prev-btn" onclick="changeImage(-1)">&#10094;</span>
+        <img src="vinyl mockup 1.png" alt="Expanded image" id="lightboxImage">
+        <span class="nav-btn next-btn" onclick="changeImage(1)">&#10095;</span>
+    </div>
+
+    <script>
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const mainImage = document.getElementById('mainImage');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const images = ['vinyl mockup 1.png', 'vinyl mockup 3.png', 'vinyl mockup 2.png']; // Array of image sources
+        let currentImageIndex = 0;
+
+        // Open the lightbox
+        mainImage.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImage.src = images[currentImageIndex];
+        });
+
+        // Close the lightbox when clicked outside the image
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        // Navigate through the images
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+            if (currentImageIndex >= images.length) currentImageIndex = 0;
+            lightboxImage.src = images[currentImageIndex];
+        }
+    </script>
+</body>
+</html>
